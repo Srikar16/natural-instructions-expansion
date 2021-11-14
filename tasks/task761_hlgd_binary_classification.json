@@ -1,0 +1,628 @@
+{
+    "Contributors": ["Venkata Srikar Pullipudi"],
+
+    "Source": ["hlgd"],
+
+    "Categories": ["Binary Classification"],
+
+    "Definition": ["Seeing the headline_a and headline_b, one must decide if these 2 tasks are on the covering the same scenario"],
+
+    "Positive Examples": [{"input": "headline_a: Equifax CEO Richard Smith Resigns After Uproar Over Massive hack. headline_b: Equifax's Interim CEO brings Charm, Focus on",
+        "output": ["False"],
+        "explanation": "Here we can see both the article headlines talk on Equifax CEO and what he has done"},
+
+        {"input": "headline_a: Ivory Coast:Gunfire erupts at army talks. headline_b: Heavy gunfire in Ivory Coast as government in talks with mutinying soldiers",
+            "output": ["True"],
+            "explanation": "Here we can see both the article headlines talk on Ivory Coast gunfire and soldiers"}],
+
+    "Negative Examples": [{"input": "headline_a: Hackers steal data of 143 million in US from Equifax. headline_b: Equifax says it won't bar consumers from joining breach-related lawsuits",
+        "output": ["True"],
+        "explanation": "Here we can see both the article headlines talk on about data breach and the other talks about the lawsuits"},
+
+        {"input": "headline_a: Justice Dept. charge China-backed hackers over Equifax breach. headline_b: U.S. Charge Chinese Military Officers in 2017 Equifax Hacking",
+            "output": ["False"],
+            "explanation": "Here we can see both the article headlines talk about the charges placed on the hackers on the same data breach"}],
+
+    "Instances": [
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Seven bodies found after dam burst at Brazil mine, hundreds missing\nheadline_b: Fears rise for 300 missing in Brazil dam disaster; 9 bodies recovered",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Dam collapses in Brazil: mud sludge leaves over 200 miners missing\nheadline_b: Brazil dam collapse: At least seven dead and hundreds missing after disaster triggers mudslides",
+        "output": [
+            "False"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Remember Savita': father's plea for voters to end Ireland's abortion ban\nheadline_b: Ireland referendum could lift strict ban on abortion",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Whistleblower Snowden can apply for Russian passport next year: RIA cites lawyer\nheadline_b: Barack Obama commutes sentence of Puerto Rican independence fighter Oscar L\u00f3pez Rivera",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Brazilian despair turns to anger as toll from Vale dam disaster hits 60\nheadline_b: Brazil dam: Startling pictures of Brumadinho collapse",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Ireland Votes to End Abortion Ban in Rebuke to Catholic Church\nheadline_b: Sturgeon takes Brexit concerns to Brussels",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Ireland votes resoundingly to repeal abortion ban\nheadline_b: Irish abortion referendum: Ireland overturns abortion ban",
+        "output": [
+            "False"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Facebook Loses EU Friends as Bloc's Lawmakers Weigh Break Up\nheadline_b: EU privacy watchdog: Big tech firms are 'blackmailing' users into agreeing with their new data terms",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: What is the eighth amendment and what happens if Ireland repeals it?\nheadline_b: Ireland to start abortion law reform after historic vote",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: EU Parliament grills Zuckerberg - but Facebook CEO slips away without giving solid answers\nheadline_b: EU data protection regulation comes into force",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Ireland exit polls show landslide victory in vote to end abortion ban\nheadline_b: Ireland ends abortion ban as 'quiet revolution' transforms country",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Chelsea Manning to walk free in May after Barack Obama commutes 35-year prison sentence for WikiLeaks disclosure\nheadline_b: Obama commutes sentence of intelligence analyst Chelsea Manning",
+        "output": [
+            "False"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Russia extends Edward Snowden's asylum 'until 2020'\nheadline_b: Whistleblower Snowden can apply for Russian passport next year: RIA cites lawyer",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Search on for up to 200 missing after Brazil dam collapse\nheadline_b: Brumadinho dam collapse: Hope fades for hundreds missing in Brazil",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Tunisia crisis: 'Social costs of austerity not on government's radar'\nheadline_b: Tunisia vows increase in aid to poor in response to protests",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Brazil dam burst death toll rises to 99, with 259 unaccounted for\nheadline_b: Brazil dam disaster: mourning and dead fish along river of mud",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Obama's parting message: We're going to be OK\nheadline_b: On Obama's last day, a low-key end to fast-paced presidency",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Brazil dam collapse: Search for survivors resumes as death roll reaches 37\nheadline_b: As death toll in Brazil nears 100, Vale dam disaster relatives lose hope",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Brazil dam collapse: Death toll jumps to 58\nheadline_b: Australia's BHP Group says no agreement reached on Samarco debt",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: A flaw-by-flaw guide to Facebook's new GDPR privacy changes\nheadline_b: Facebook to start asking permission for facial recognition in GDPR push",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: UK Supreme Court backs N Ireland women's right to abortion\nheadline_b: May opens door to allowing MPs vote on overturning Northern Ireland abortion ban",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Ireland abortion referendum: Country votes on easing strict law\nheadline_b: Northern Ireland under pressure after historic abortion vote",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: EU Parliament grills Zuckerberg - but Facebook CEO slips away without giving solid answers\nheadline_b: European tech firms struggle with new data protection law",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Brazil dam collapse: five arrested including three mining firm staff\nheadline_b: Brazil's Lethal Environmental Negligence",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: One person killed during protests in Tunisia: state news agency\nheadline_b: Tunisian protester killed in clashes with police over price hikes, unemployment",
+        "output": [
+            "False"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: First exit poll suggests Ireland votes to relax abortion laws\nheadline_b: Abortion referendum exit poll results trigger calls for Northern Ireland to follow suit",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Ireland votes to overturn 35-year-old constitutional ban on abortion\nheadline_b: Northern Ireland under pressure after historic abortion vote",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Julian Assange's conditions for extradition to US 'not met', say lawyers\nheadline_b: Commuting Chelsea Manning's sentence is not enough",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: U.S. News Outlets Block European Readers Over New Privacy Rules\nheadline_b: U.S. news sites are ghosting European readers on GDPR deadline",
+        "output": [
+            "False"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Ireland abortion referendum: PM hails 'quiet revolution'\nheadline_b: Ireland Votes to End Abortion Ban in Rebuke to Catholic Church",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: We will make history': hopes grow in Ireland ahead of abortion vote count\nheadline_b: Irish abortion: the legal landscape",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Obama commutes sentence of Chelsea Manning, soldier convicted for leaking classified information\nheadline_b: Obama commutes Manning sentence",
+        "output": [
+            "False"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Brazilians furious with mining company and regulators: 58 dead confirmed and 300 missing\nheadline_b: Brazilian despair turns to anger as toll from Vale dam disaster hits 60",
+        "output": [
+            "False"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Hopes dim in search for survivors after Brazil dam collapse\nheadline_b: Waste unleashed from Brazil dam on its way to a larger river",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Ireland abortion referendum: Repeal the eighth campaign maintains lead as Irish are urged to come Home To Vote\nheadline_b: Ireland set to end abortion ban in landslide vote: exit polls",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Brazilian despair turns to anger as toll from Vale dam disaster hits 60\nheadline_b: Vale stock plunges after Brazil disaster; $19 billion in market value lost",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: U.S. confirms avian influenza in Tennessee chicken flock\nheadline_b: U.S. reports low pathogenic bird flu outbreak in Wisconsin: OIE",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Irish abortion referendum: PM Varadkar to campaign for change\nheadline_b: Ireland to greenlight referendum on abortion law reform",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Hundreds feared dead as Brazil dam collapse releases mud tide\nheadline_b: After Brazil dam disaster, Vale asks for forgiveness, gets fury",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Tunisia escalates crackdown in effort to head off Sunday protest\nheadline_b: Tunisia protests: Government announce reforms after unrest",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: White House acknowledges Obama can't close Gitmo\nheadline_b: Obama calls voter fraud claims 'fake news'",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Republicans: Reducing Manning's sentence 'outrageous'\nheadline_b: Manning to reportedly lose transgender benefits with dishonorable discharge",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Apple chief pushes for US privacy law to stop 'weaponizing' data\nheadline_b: Apple boss Tim Cook praises GDPR and wants tough US privacy law",
+        "output": [
+            "False"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Ireland's abortion decision: a photo essay\nheadline_b: Pro-abortion rights Irish PM confident amid high referendum turnout",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Vale CEO says some 200 workers missing after dam burst at Brazil mine\nheadline_b: Hundreds missing after Vale dam burst at Brazil mine, seven bodies found",
+        "output": [
+            "False"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: The Latest: Anti-abortion Group Admits Defeat in Irish Vote\nheadline_b: Irish abortion referendum: Ireland overturns abortion ban",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Barack Obama commutes Chelsea Manning's prison sentence - video\nheadline_b: Obama commutes whistleblower's sentence: Chelsea Manning to walk free in 120 days",
+        "output": [
+            "False"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Top Congressional Republicans condemn Chelsea Manning decision\nheadline_b: Obama defends Manning commutation",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: With Hundreds Missing Following Burst Brazil Dam, a Frantic Search for Survivors\nheadline_b: As death toll in Brazil nears 100, Vale dam disaster relatives lose hope",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Nearly 24,000 ordered to evacuate after Brazil dam burst, 250 missing\nheadline_b: Search for survivors, despair in Brazil amid dam collapse",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Obama commutes sentence for Puerto Rico activist Oscar L\u00f3pez Rivera\nheadline_b: Obama calls voter fraud claims 'fake news'",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Ireland's abortion referendum could open a huge fault line in Theresa May's fragile government\nheadline_b: Scotland uneasy about Northern Ireland gaining Brexit advantage",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Tunisia imposes nationwide curfew amid spreading unrest\nheadline_b: Tunisia holds emergency state meeting over unrest",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: 7 People Killed and 200 Missing in Brazil After Dam Collapses, Officials Say\nheadline_b: Funerals held for Brazil dam collapse victims",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Obama heading to California after Trump sworn in\nheadline_b: President Obama commutes Chelsea Manning sentence",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Ireland could legalize abortion this year: A look at the referendum\nheadline_b: Landslide Yes vote as Ireland referendum repeals tough abortion laws - what happens next?",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Zuckerberg didn't make any friends in Europe today\nheadline_b: Google tries to ease tensions on eve of new EU privacy law",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Brazils dam collapse seemed destined to happen -- and may happen again, experts say\nheadline_b: TUV SUD hires law firms to probe Vale dam disaster role",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Obama commutes Chelsea Manning's sentence for leaking Army documents\nheadline_b: Puerto Ricans cheer commutation for nationalist Oscar Lopez",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: U.S. reports bird flu outbreak in California: OIE\nheadline_b: Vietnam reports outbreak of H5N6 bird flu virus: OIE",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: EU privacy law heralds new era in online data protection\nheadline_b: European tech firms struggle with new data protection law",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: What is the eighth amendment and what happens if Ireland repeals it?\nheadline_b: Irish abortion result a seismic shift",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Obama's tough dilemma on Manning, Wikileaks\nheadline_b: Pardon my whistleblower: Obama commutes Chelsea Manning sentence (part 1)",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Irish regulator readies draft decisions in first big tech privacy probes\nheadline_b: EU privacy body warns of privacy risks in Google, Fitbit deal",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Tunisia will increase aid for poor in response to protests\nheadline_b: Tunisia's Government Pledges Improvements After Protests",
+        "output": [
+            "False"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Mark Zuckerberg's first stop on his tour of the US is Dallas, Texas\nheadline_b: Obama commutes Chelsea Manning's sentence for leaking Army documents",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Idea of 'gifting' Snowden to Trump for inauguration is 'nonsense' - lawyer on ex-CIA chief proposal\nheadline_b: Edward Snowden could soon be on the path to Russian citizenship",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Obama celebrates World Series champion Chicago Cubs\nheadline_b: On Obama's last day, a low-key end to fast-paced presidency",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Brazil union says it urged Vale to move offices away from burst dam\nheadline_b: Brazil's Lethal Environmental Negligence",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Russia Extends Edward Snowden's Asylum\nheadline_b: CORRECTED-UPDATE 1-Manning served tough prison term, commutation would not send wrong signal -Obama",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Russia extends residence permit for Snowden\nheadline_b: Obama says reducing leaker Chelsea Manning's prison term serves justice",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Toll in Brazil dam disaster rises to 115 dead, 248 missing\nheadline_b: Journalist details mom's search for son in Brazil dam breach",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: President Obama commutes Chelsea Manning sentence\nheadline_b: Wikileaks' founder Assange says stands by U.S. extradition offer",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Irish abortion result a seismic shift\nheadline_b: Ireland ends abortion ban as 'quiet revolution' transforms country",
+        "output": [
+            "False"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Facebook Loses EU Friends as Bloc's Lawmakers Weigh Break Up\nheadline_b: Cambridge Analytica Whistle-Blower Decries Facebook's 'Non-Answers'",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Irish abortion result a seismic shift\nheadline_b: Tory deputy chair attacks MPs over Northern Ireland abortion law",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Ireland to start abortion law reform after historic vote\nheadline_b: Theresa May to oppose vote on Northern Ireland abortion law",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Obama's final press conference: Chelsea Manning commutation is 'appropriate'\nheadline_b: Forget Chelsea Manning. This is the Obama pardon you should be mad about.",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Obama's parting message: We're going to be OK\nheadline_b: Obama's Chelsea Manning decision: President's dangerous move reveals scary take on our national security",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Biggest U.S. Bird Flu Outbreak Prompts Precautions by Producers\nheadline_b: India reports outbreak of H5N1 bird flu in Uttar Pradesh: OIE",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Julian Assange under pressure to hand himself over for extradition following Chelsea Manning commutation\nheadline_b: WikiLeaks founder Julian Assange says he'll come to US -- with caveat",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Vale hires law firm Skadden to run dam burst investigation\nheadline_b: Brazils dam collapse seemed destined to happen -- and may happen again, experts say",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Pro-abortion rights Irish PM confident amid high referendum turnout\nheadline_b: Exit polls predict win for repealing abortion ban",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Abortion decriminalisation bill tabled in Commons\nheadline_b: MPs back bid to force government to reform abortion and marriage laws in Northern Ireland",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Chelsea Manning sentence commuted\nheadline_b: Obama commutes whistleblower's sentence: Chelsea Manning to walk free in 120 days",
+        "output": [
+            "False"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Brazilian miner Vale's dam breaks in Minas Gerais state\nheadline_b: Brazilians evacuated as miner Vale's dam breaks, releases sludge",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: 200 missing' in Brazil as Vale dam fails\nheadline_b: Probe over Brazil dam disaster puts heat on mining company Vale",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Ireland tipped to repeal abortion ban by a landslide\nheadline_b: Irish PM: 'A quiet revolution has taken place' - video",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: How Europe's new Internet rules could change your life\nheadline_b: EU Parliament grills Zuckerberg - but Facebook CEO slips away without giving solid answers",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Abortion referendum should be held in NI - Tory MP\nheadline_b: The only Northern Irish woman with a choice about abortion? Arlene Foster",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Brazilians furious with mining company and regulators: 58 dead confirmed and 300 missing\nheadline_b: Brazil dam collapse: 65 dead, 292 missing and anger still growing",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Hundreds missing in Brazil after Vale tailings dam breaks, area evacuated\nheadline_b: Hundreds missing in Brazil after Vale tailings dam collapses - video report",
+        "output": [
+            "False"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Irish abortion referendum: Undecided voters could be deciding factor as polls open in historic ballot\nheadline_b: Irish abortion referendum voting opens",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Brazil dam collapses: 200 missing, deaths feared\nheadline_b: Brazil union says it urged Vale to move offices away from burst dam",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Glenn Greenwald: \"Very unlikely\" Obama will pardon or commute Snowden's sentence\nheadline_b: Manning served tough prison term, commutation would not send wrong signal -Obama",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Risk of new Brazil dam burst forces 24,000 to evacuate homes\nheadline_b: Brazil eyes management overhaul for Vale after deadly dam disaster",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Facebook's Mark Zuckerberg Gets an Earful From the E.U.\nheadline_b: Landmark EU law is new weapon for data protection campaigner Schrems",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: GDPR, or Why Privacy Is Now Stronger in EU Than U.S.\nheadline_b: Liberation day! Don't email me. I sure won't be emailing you",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Zuckerberg didn't make any friends in Europe today\nheadline_b: US websites blacked out in Europe on 'Happy GDPR Day'",
+        "output": [
+            "True"
+        ]
+    },
+    {
+        "input": "Are these 2 headlines covering the same scenario?\nheadline_a: Brazil fines Vale $66 million over mine dam burst\nheadline_b: Rescuers confirm 58 dead in Brazil dam burst",
+        "output": [
+            "True"
+        ]
+    }
+    ]
+}
